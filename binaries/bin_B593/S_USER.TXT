@@ -1,0 +1,79 @@
+User documenation summary for test software version B.5.9.3
+
+Summary of command line and 'SEND.INI' switches:
+
+Usage:    send [-?] [-u] [-m] [-a addr] [-d l|f|a|s] [-n pre] [-N trig]
+               [-l] [-p port] [-f] [-x] [-r] [-t mask] [-c mask] [-E pre]
+               [-T] [-F fill] [-R reps] [-P] [-A] [-s] [-S] [-g mask]
+Ini file: <C:\HOME\KENW\NMRA\SRC\SEND\SEND.INI>
+  -?                    Print usage message and exit
+  -u                    Print user information to 's_user.txt' and exit
+  -m         MANUAL     Start in manual mode                 <value false>
+  -a <addr>  ADDRESS    Decoder address                      <value ???>
+  -d l|f|a|s TYPE       Dec. type(l-LOC,f-FUNC,a-ACC,s-SIG)  <value L>
+  -l         LAMP       Use rear lamp for function tests     <value false>
+  -n <pre>   PRESET     Signal decoder preset aspect         <value 0>
+  -N <trig>  TRIGGER    Signal decoder trigger aspect        <value 8>
+  -p <port>  PORT       I/O Port                             <value 0x0340>
+  -f         FRAGMENT   Test all fragments                   <value false>
+  -x         CRITICAL   Protect critical regions             <value false>
+  -r         REPEAT     Repeat decoder tests                 <value false>
+  -t <mask>  TESTS      Bit mask of tests to run             <value 0xffffffff>
+  -c <mask>  CLOCKS     Bit mask of clocks to try            <value 0xfffffce7>
+  -g <mask>  FUNCS      Bit mask of active functions         <value 0x1f>
+  -E <pre>   EXTRA_PRE  Extra margin test preamble bits      <value 0>
+  -T         TRIG_REV   Use reverse as trigger command       <value false>
+  -F <fill>  FILL_MSEC  Fill time in milliseconds            <value 1000>
+  -R <reps>  TEST_REPS  Non packet acceptance test repeats   <value 2>
+  -P         LOG_PKTS   Send packets to log, not hardware    <value false>
+  -A         NO_ABORT   Do not stop program on an error      <value false>
+  -s         LATE_SCOPE Put scope trigger after trigger      <value false>
+  -S    SAME_AMBIG_ADDR Use same address for ambig tests     <value false>
+Summary of decoder test tests and clocks:
+
+List of tests to run and their corresponding '-t'  parameter.
+
+PARAMETER   TEST
+----------------------------------------------------------------------------
+0x00000001                               1T margin test.
+0x00000002                               1H duty cycle test.
+0x00000004                               Ramp test.
+0x00000008  Pre 12 Idle 1                Packet acceptance test.
+0x00000010  Pre 12 Idle 2                Packet acceptance test.
+0x00000020  Pre 13 Idle 1                Packet acceptance test.
+0x00000040  Pre 15 Idle 1                Packet acceptance test.
+0x00000080  Pre 15 Idle 2                Packet acceptance test.
+0x00000100                               Bad address test.
+0x00000200                               Bad bit test.
+0x00000400  No stretch                   Single stretched 0 test.
+0x00000800  Long negative stretch        Single stretched 0 test.
+0x00001000  Long positive stretch        Single stretched 0 test.
+0x00002000  Maximum negative stretch     Single stretched 0 test.
+0x00004000  Maximum positive stretch     Single stretched 0 test.
+0x00008000                               Truncated packet test.
+0x00010000                               Prior packet test.
+0x00020000                               6 prior byte test.
+0x00040000                               1 ambiguous bit test.
+0x00080000                               2 ambiguous bits test.
+
+List of clocks to use and their corresponding '-c'  parameters.
+
+PARAMETER   CLK0T  CLK0H  CLK1T    CLOCK TEST
+----------------------------------------------------------------------------
+0x00000001    200    100    116    All nominal.
+0x00000002    196     98    113    All 1/4 fast.
+0x00000004    190     95    110    Command station min.
+0x00000008    184     92    106    Minimum + 2.
+0x00000010    182     91    105    Minimum + 1.
+0x00000020    180     90    104    Decoder minimum.
+0x00000040    204    102    119    All 1/4 slow.
+0x00000080    210    105    122    Command station max.
+0x00000100    216    108    126    Maximum - 2.
+0x00000200    218    109    127    Maximum - 1.
+0x00000400    220    110    128    Decoder maximum.
+0x00000800    300    100    116    Negative stretched 0.
+0x00001000    300    200    116    Positive stretched 0.
+0x00002000   2560    100    116    Very negative 0.
+0x00004000   2560   2460    116    Very positive 0.
+0x00008000  12000    100    116    Max Decoder Neg 0.
+0x00010000  12000  11900    116    Max Decoder Pos 0.

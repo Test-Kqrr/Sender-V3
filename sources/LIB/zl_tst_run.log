@@ -1,0 +1,26 @@
+<Wed Jul 24 21:01:41 2019> STATUS  NULL cmd_name test message   1
+<Wed Jul 24 21:01:41 2019> WARNING main - NULL cmd_name test message   2
+<Wed Jul 24 21:01:41 2019> STATUS  testme: Test message   3
+<Wed Jul 24 21:01:41 2019> WARNING testme: main - Test message   4
+<Wed Jul 24 21:01:41 2019> STATUS  zl_tst: Test message   5
+<Wed Jul 24 21:01:41 2019> WARNING zl_tst: main - Test message   6
+<Wed Jul 24 21:01:41 2019> STATUS  zl_tst: Test message to file & stderr   9
+<Wed Jul 24 21:01:41 2019> WARNING zl_tst: main - Test message to file & stderr  10
+<Wed Jul 24 21:01:41 2019> EMERG   zl_tst: main - Test message  11
+<Wed Jul 24 21:01:41 2019> ALERT   zl_tst: main - Test message  12
+<Wed Jul 24 21:01:41 2019> CRIT    zl_tst: main - Test message  13
+<Wed Jul 24 21:01:41 2019> ERROR   zl_tst: main - Test message  14
+<Wed Jul 24 21:01:41 2019> WARNING zl_tst: main - Test message  15
+<Wed Jul 24 21:01:41 2019> NOTICE  zl_tst: main - Test message  16
+<Wed Jul 24 21:01:41 2019> INFO    zl_tst: main - Test message  17
+<Wed Jul 24 21:01:41 2019> DEBUG   zl_tst: main - Test message  18
+to_log msg  19
+to_stat msg  20
+to_dump msg  21
+<Wed Jul 24 21:01:41 2019> DUMP    zl_tst: main - Test message  22
+	main - Test message  23
+Log msg zl_tst: main - Should print  24
+<Wed Jul 24 21:01:41 2019> STATUS  zl_tst: After log close  25
+Should print to stat only file  26
+<Wed Jul 24 21:01:41 2019> ERROR   zl_tst: main - Abort test message  27
+<Wed Jul 24 21:01:41 2019> ERROR   zl_tst: errprint - Aborting program - error priority <ERROR>
